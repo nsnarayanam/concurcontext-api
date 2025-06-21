@@ -1,0 +1,9 @@
+
+services:
+  - type: web
+    name: concurcontext-api
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn concurcontext_llm_router_app:app --bind 0.0.0.0:10000"
+    plan: free
+    autoDeploy: true
